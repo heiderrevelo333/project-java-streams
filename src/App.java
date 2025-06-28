@@ -49,8 +49,18 @@ public class App {
                 new Book("Peopleware", "Tom DeMarco", 50.00));
 
         // mostrar todos los libros
+        System.out.println("Lista de libros:");
         books.stream()
                 .forEach(book -> System.out.println(book));
+
+        // books.stream()
+        // .forEach(System.out::println);
+
+        // Filtrar libros que cuesten más de $50
+        System.out.println("\nLibros que cuestan más de $50:");
+        books.stream()
+                .filter(book -> book.getPrice() > 50)
+                .forEach(System.out::println);
 
     }
 }
