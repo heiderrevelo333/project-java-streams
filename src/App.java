@@ -56,8 +56,14 @@ public class App {
         // books.stream()
         // .forEach(System.out::println);
 
-        // Filtrar libros que cuesten más de $50
+        // Filtrar libros que cuesten más de $50 (filter + Predicate)
         System.out.println("\nLibros que cuestan más de $50:");
+        books.stream()
+                .filter(book -> book.getPrice() > 50)
+                .forEach(System.out::println);
+
+        // Obtener solo los títulos en mayúsculas (map + Function)
+        System.out.println("\nTítulos de libros en mayúsculas:");
         books.stream()
                 .filter(book -> book.getPrice() > 50)
                 .forEach(System.out::println);
