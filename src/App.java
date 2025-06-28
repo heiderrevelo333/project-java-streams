@@ -120,5 +120,33 @@ public class App {
                 .sorted(Comparator.comparing(Book::getPrice))
                 .forEach(System.out::println);
 
+        // Evaluación
+        // 1. ¿Qué operador usarías para transformar una lista de títulos a mayúsculas?
+        System.out.println("\n--- Evaluación ---\n");
+        System.out.println("--- 1. Títulos en Mayúsculas (map) ---\n");
+        List<String> titulosEnMayusculas = books.stream()
+                .map(Book::getTitle)
+                .map(String::toUpperCase)
+                .toList();
+
+        titulosEnMayusculas.forEach(System.out::println);
+
+        // 2. ¿Cómo verificarías si todos los libros cuestan menos de $100?
+        System.out.println("\n--- 2. ¿Todos los libros cuestan menos de $100? (allMatch) ---\n");
+        boolean todosMenosDe100 = books.stream()
+                .allMatch(book -> book.getPrice() < 100.00);
+
+        System.out
+                .println(todosMenosDe100 ? "Sí, todos cuestan menos de $100." : "No, no todos cuestan menos de $100.");
+
+        // 3. Escribe una expresión lambda que retorne true si el autor es "Gabriel García Márquez".
+        System.out.println("\n--- 3. Libros de Gabriel García Márquez (filter) ---\n");
+        List<Book> librosDeGabo = books.stream()
+                .filter(book -> book.getAuthor().equals("Gabriel García Márquez"))
+                .toList();
+
+        librosDeGabo.forEach(System.out::println);
     }
+
 }
+
