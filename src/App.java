@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -111,6 +112,12 @@ public class App {
         // Omitir los dos primeros libros
         books.stream()
                 .skip(2)
+                .forEach(System.out::println);
+
+        // Ordenar por precio (sorted + Comparator)
+        System.out.println("\nLibros ordenados por precio:");
+        books.stream()
+                .sorted(Comparator.comparing(Book::getPrice))
                 .forEach(System.out::println);
 
     }
