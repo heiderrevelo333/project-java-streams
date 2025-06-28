@@ -77,5 +77,13 @@ public class App {
 
         cheapBooks.forEach(System.out::println);
 
+        // Obtener el precio total de todos los libros (reduce + BinaryOperator)
+        System.out.println("\nPrecio total de todos los libros:");
+        double totalPrice = books.stream()
+                .map(Book::getPrice)
+                .reduce(0.0, (a, b) -> a + b);
+
+        System.out.println("Total: $" + totalPrice);
+
     }
 }
