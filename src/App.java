@@ -92,5 +92,14 @@ public class App {
 
         System.out.println("¿Hay libro de Martin? " + hasMartin);
 
+        // Eliminar duplicados por título (distinct + Comparator)
+        System.out.println("\nLibros sin duplicados por título:");
+        List<String> titles = books.stream()
+                .map(Book::getTitle)
+                .distinct()
+                .collect(Collectors.toList());
+
+        titles.forEach(System.out::println);
+
     }
 }
