@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import models.Book;
 
@@ -67,6 +68,14 @@ public class App {
         books.stream()
                 .filter(book -> book.getPrice() > 50)
                 .forEach(System.out::println);
+
+        // Recopilar libros baratos (collect + Predicate + Collectors)
+        System.out.println("\nLibros que cuestan $50 o menos:");
+        List<Book> cheapBooks = books.stream()
+                .filter(book -> book.getPrice() < 50)
+                .collect(Collectors.toList());
+
+        cheapBooks.forEach(System.out::println);
 
     }
 }
