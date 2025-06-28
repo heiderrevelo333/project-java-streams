@@ -85,5 +85,12 @@ public class App {
 
         System.out.println("Total: $" + totalPrice);
 
+        // ¿Hay algún libro de “Robert C. Martin”? (anyMatch + Predicate)
+        System.out.println("\n¿Hay algún libro de 'Robert C. Martin'?");
+        boolean hasMartin = books.stream()
+                .anyMatch(book -> book.getAuthor().equals("Robert C. Martin"));
+
+        System.out.println("¿Hay libro de Martin? " + hasMartin);
+
     }
 }
