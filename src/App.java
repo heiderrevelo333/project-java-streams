@@ -101,5 +101,17 @@ public class App {
 
         titles.forEach(System.out::println);
 
+        // Limitar y saltar libros (limit + skip)
+        System.out.println("\nPrimeros 5 libros:");
+        // Mostrar los dos primeros libros
+        books.stream()
+                .limit(2)
+                .forEach(System.out::println);
+
+        // Omitir los dos primeros libros
+        books.stream()
+                .skip(2)
+                .forEach(System.out::println);
+
     }
 }
